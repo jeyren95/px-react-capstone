@@ -7,8 +7,8 @@ export const TextInput = ({ ...inputProps }) => {
 
     return (
         <input 
+        {...inputProps}
         id={id}
-        { ...inputProps }
         className={cn("block shadow-sm sm:text-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300 rounded-md", inputProps.className)}
         />
     )

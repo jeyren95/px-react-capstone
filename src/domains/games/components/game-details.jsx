@@ -31,7 +31,7 @@ export const GameDetails = () => {
                             <p className="text-md text-gray-900">Release Date: {(new Date(data.gameInfo.releaseDate * 1000)).toDateString().slice(3)}</p>
                         </div>
                         <div className="mt-5 space-y-1">
-                            <p className="text-base text-gray-500">Steam % rating: {Number(data.gameInfo.steamRatingPercent) > 0 ? data.gameInfo.steamRatingPercent : "No ratings"}</p>
+                            <p className="text-base text-gray-500">Steam % rating: {Number(data.gameInfo.steamRatingPercent) > 0 ? `${data.gameInfo.steamRatingPercent}%` : "No ratings"}</p>
                             <p className="text-base text-gray-500">Steam rating comments: {data.gameInfo.steamRatingText ? data.gameInfo.steamRatingText : "No rating comments"}</p>
                             <p className="text-base text-gray-500">Metacritic score: {Number(data.gameInfo.metacriticScore) > 0 ? data.gameInfo.metacriticScore : "No score"}</p>
                         </div>
