@@ -7,7 +7,7 @@ export const GameDetails = () => {
     const { bookmarks, addBookmark, deleteBookmark } = useBookmarks()
     
     return (
-        <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
             { isLoading ? <h1>Loading...</h1>
             :
             isError ? <h1>Error: {error.message}</h1>

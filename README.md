@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Steam Games Sale App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This application is built using React. It shows the Steam video games that are on sale, and also gives users an overview of the different ratings (if available) for each of the game.
 
-## Available Scripts
+### Resources
+Steam is a video game digital distribution service by Valve. For more information on Steam: https://en.wikipedia.org/wiki/Steam_(service)
 
-In the project directory, you can run:
+To obtain the sale prices and ratings, the app mainly makes API calls to the CheapShark API. CheapShark is a price comparison website for digital PC Games. They keep track of prices across multiple stores including Steam, GreenManGaming, Fanatical, and many others. For more information on the CheapShark API: https://apidocs.cheapshark.com/
 
-### `npm start`
+## Setup
+### Downloading the repository
+Clone the repository fromGithub. On your terminal or Git Bash, type the following:
+```shell
+git clone https://github.com/jeyren95/px-frontend-capstone.git
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Run Application 
+From the root folder i.e. `px-frontend-capstone`:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To run the app in development mode, you can run the following:
+```shell
+npm run start
+```
 
-### `npm test`
+To run the styleguidist in development mode, you can run the following:
+```shell
+npm run start:styleguidist
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Build Application
+From the root folder i.e. `px-frontend-capstone`:
 
-### `npm run build`
+To build the app itself, you can run the following:
+```shell
+npm run build
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To build the styleguidist, you can run the following:
+```shell
+npm run build:start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
+### Home page
+<img width="695" src="https://user-images.githubusercontent.com/65485512/138024076-02b8b32b-93da-460e-8b28-6ed98fac38ef.png" alt="home-page" />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- This is the first page that the user sees when the app is opened on the browser, and the user will be able to see the different Steam games that are on sale. These games are sorted (by default) according to the deal rating (in descending order). Users can click on the "Learn More" button on each game to view more details about the game such as steam ratings, steam comments and release date.
 
-### `npm run eject`
+- There are 4 other features on the home page, which include the following:
+    1. The user can navigate across different pages of games, by clicking the "Previous" or "Next" buttons
+    1. On click of the "Your Favorites" button, the user will be navigated to the Bookmarks page, where the user's saved games will be displayed.
+    1. The user is also able to search for a desired game, and will be navigated to the Search page, where the search results will be displayed.
+    1. The user can also sort the games based on the following criteria:
+        1. Deal Rating (default)
+        1. Title
+        1. Price
+        1. Metacritic
+        1. Savings
+        1. Reviews
+        1. Release
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Search page
+<img width="695" src="https://user-images.githubusercontent.com/65485512/138025037-1a4a6d66-8ad1-4e44-ba83-20b88e46b0fb.png" alt="search-page" />
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- This page displays the most relevant results from the user's search 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### Game details page
+<img width="695" src="https://user-images.githubusercontent.com/65485512/138037503-4e996050-3ef2-4f45-ab7b-bb6b18964592.png" alt="game-details-page />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- This page displays the game details of the specific game that was selected by the user
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Game details include the following:
+    1. Sale price
+    1. Game title
+    1. Game release date
+    1. Steam % ratings
+    1. Steam rating comments
+    1. Metacritic score
 
-### Code Splitting
+- The user will also be able to save the game into the bookmarks by clicking on the "Save this to bookmarks!" button
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- The saved game will then appear in the Bookmarks page
 
-### Analyzing the Bundle Size
+### Bookmarks page
+#### Without any saved games
+<img width="695" src="https://user-images.githubusercontent.com/65485512/138038154-8e6bc6a0-19e6-4e02-98cf-ed4443939be5.png" alt="bookmarks-no-saved-games-page" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- If there are no bookmarked games from the user, this page should display a message to indicate that there are no bookmarked games yet
 
-### Making a Progressive Web App
+#### With saved games
+<img width="695" src="https://user-images.githubusercontent.com/65485512/138037887-a0fcd69c-0478-4f14-a0d4-6088151517c4.png" alt="bookmarks-saved-page" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- If the user has bookmarked any games, those games should appear on this page
 
-### Advanced Configuration
+- The user should also be able to remove any bookmarked games from the page by clicking on the "Remove from bookmarks" button
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Styleguidist page
+<img width="695" src="https://user-images.githubusercontent.com/65485512/138038405-75fa4a4c-1932-4d8f-9d2f-4d22138de514.png" alt="styleguidist-page" />
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- This is the page made using React-styleguidist, where users can play around and test out the different components that have been used to develop this application
