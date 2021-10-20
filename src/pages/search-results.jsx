@@ -15,7 +15,7 @@ export const SearchResultsPage = () => {
                 title={game.info.title}
                 imageUrl={game.info.thumb}
                 normalPrice={deal.retailPrice}
-                salePrice={deal.salePrice}
+                salePrice={deal.price}
                 savings={deal.savings}
                 />
             )
