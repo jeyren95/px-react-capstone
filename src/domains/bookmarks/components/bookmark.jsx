@@ -1,4 +1,5 @@
 import { Button } from "components/button";
+import { TrashIcon } from "@heroicons/react/outline";
 
 export const Bookmark = ({ title, normalPrice, salePrice, imageUrl, deleteBookmark }) => {
 
@@ -21,10 +22,11 @@ export const Bookmark = ({ title, normalPrice, salePrice, imageUrl, deleteBookma
                     <Button
                     type="button"
                     variant="outline"
-                    className="mt-6"
+                    className="mt-6 py-3"
                     onClick={deleteBookmark}
                     >
                         Remove from bookmarks
+                        <TrashIcon className="h-5 w-5 ml-3" />
                     </Button>       
             </div>          
         </div>

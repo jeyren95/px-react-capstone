@@ -1,6 +1,8 @@
 import { Button } from "components/button";
 import { useGameDetails } from "domains/games";
 import { useBookmarks } from "domains/bookmarks";
+import { TrashIcon } from "@heroicons/react/outline";
+import { PlusCircleIcon } from "@heroicons/react/solid";
 
 export const GameDetails = () => {
     const { isLoading, isError, data, error } = useGameDetails()
@@ -39,19 +41,21 @@ export const GameDetails = () => {
                         <Button 
                         type="button"
                         variant="outline"
-                        className="mt-5"
+                        className="mt-5 py-3"
                         onClick={() => deleteBookmark(data)}
                         >
                             Remove from bookmarks
+                            <TrashIcon className="h-5 w-5 ml-3" />
                         </Button>
                         :
                         <Button
                         type="button"
                         variant="primary"
-                        className="mt-5"
+                        className="mt-5  py-3"
                         onClick={() => addBookmark(data)}
                         >
                             Save this to bookmarks!
+                            <PlusCircleIcon className="h-5 w-5 ml-3" />
                         </Button>
                         }
 

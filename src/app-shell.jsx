@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "components/button";
+import { StarIcon } from "@heroicons/react/solid"
 
 export const AppShell = ({ children }) => {
     return (
@@ -17,6 +18,7 @@ export const AppShell = ({ children }) => {
                                 variant="primary"
                                 >
                                     Your Favorites
+                                    <StarIcon className="h-5 w-5 ml-2"/>
                                 </Button>   
                             </Link>
                         </nav>

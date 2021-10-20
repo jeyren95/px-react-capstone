@@ -2,6 +2,7 @@ import { Game, useGames } from "domains/games";
 import { Button } from "components/button";
 import { SearchForm } from "domains/games";
 import { SelectField } from "components/select-field";
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/solid"
 
 export const GamesPage = () => {
     const { isLoading, isError, error, data, setSelectedSortingOption, page, setPage } = useGames()
@@ -40,12 +41,13 @@ export const GamesPage = () => {
                     />
                 </div>
 
-                <div className="text-center space-x-8 mb-10">            
+                <div className="space-x-8 mb-10 flex items-center justify-center">            
                     <Button 
                     type="button" 
                     variant="primary"
                     onClick={() => page > 0 && setPage(page - 1)}
                     >
+                        <ArrowLeftIcon className="h-5 w-5 mr-3" />
                         Previous
                     </Button>
                     <span className="text-lg font-bold">Page {page + 1}</span>
@@ -55,6 +57,7 @@ export const GamesPage = () => {
                     onClick={() => setPage(page + 1)}
                     >
                         Next
+                        <ArrowRightIcon className="h-5 w-5 ml-3" />
                     </Button>
                 </div>
                 { isLoading ? <h1>Loading...</h1>
