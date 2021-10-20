@@ -38,7 +38,7 @@ npm run build
 
 To build the styleguidist, you can run the following:
 ```shell
-npm run build:start
+npm run start:build
 ```
 
 ## Features
