@@ -11,6 +11,7 @@ import { GamesPage } from "./pages/games";
 import { GameDetailsPage } from "./pages/game-details";
 import { BookmarksPage } from "./pages/bookmarks";
 import { SearchResultsPage } from "./pages/search-results";
+import { Error404Page } from "./pages/error-404";
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -22,10 +23,10 @@ const queryClient = new QueryClient({
 
 ReactDOM.render(
     <BrowserRouter>
-        <Switch>
-            <QueryClientProvider client={queryClient}>
+        <QueryClientProvider client={queryClient}>
+            <BookmarksContextProvider>
                 <AppShell>
-                    <BookmarksContextProvider>
+                    <Switch>
                         <Route path="/games/:id">
                             <GameDetailsPage />
                         </Route>
@@ -38,10 +39,14 @@ ReactDOM.render(
                         <Route path="/" exact>
                             <GamesPage />
                         </Route> 
-                    </BookmarksContextProvider>
+                        <Route path="*">
+                            <Error404Page />
+                        </Route>  
+                    </Switch>
                 </AppShell> 
-            </QueryClientProvider>
-        </Switch>
+            </BookmarksContextProvider>
+        </QueryClientProvider>
+        
     </BrowserRouter>
     , document.getElementById("root")
 )
