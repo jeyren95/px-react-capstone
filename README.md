@@ -60,15 +60,55 @@ npm run build:start
         1. Reviews
         1. Release
 
+#### Relevant API calls
+- In order to retrieve the games, a `fetch` API call was made to the CheapShark API `deals` endpoint
+
+- The following additional queries were used to make the call:
+    1. pageNumber
+    1. pageSize
+    1. storeID
+    1. onSale 
+    1. sortBy
+
+##### Example:
+```shell
+https://www.cheapshark.com/api/1.0/deals?pageNumber=1&pageSize=12&storeID=1&onSale=1&sortBy=Savings
+```
+- storeID = 1 indicates that only games from the Steam store would be retrieved
+- onSale = 1 indicates that only games that are on sale would be retrieved
 
 ### Search page
 <img width="695" src="https://user-images.githubusercontent.com/65485512/138025037-1a4a6d66-8ad1-4e44-ba83-20b88e46b0fb.png" alt="search-page" />
 
 - This page displays the most relevant results from the user's search 
 
+#### Relevant API calls
+- In order to retrieve the searched games, 2 `fetch` API calls had to be made to the CheapShark API `games` endpoint upon navigation to the search page
+
+- The first call was used to retrieve the relevant games based on the search term inputted by the user
+
+- The following additional queries were used to make the first call:
+    1. title (which represents the search term made by the user)
+
+##### Example
+```shell
+https://www.cheapshark.com/api/1.0/games?title=batman
+```
+- The above call would only retrieve details such as the game IDs, and not the desired game details that the application would like to display, which is why a second API call had to be made to retrieve those relevant details
+
+- Given the game IDs that were retrieved from the first API call, the second API call involved using each game ID as a query to retrieve the game details for each respective game 
+
+- The following additional queries were used to make the second call:
+    1. id (which represents the game ID that was retrieved from the previous call)
+
+##### Example 
+```shell
+https://www.cheapshark.com/api/1.0/games?id=612
+```
+
 
 ### Game details page
-<img width="695" src="https://user-images.githubusercontent.com/65485512/138037503-4e996050-3ef2-4f45-ab7b-bb6b18964592.png" alt="game-details-page />
+<img width="695" src="https://user-images.githubusercontent.com/65485512/138037503-4e996050-3ef2-4f45-ab7b-bb6b18964592.png" alt="game-details-page" />
 
 - This page displays the game details of the specific game that was selected by the user
 
@@ -84,6 +124,17 @@ npm run build:start
 
 - The saved game will then appear in the Bookmarks page
 
+#### Relevant API calls
+- In order to retrieve the game details, a `fetch` API call had to be made to the CheapShark API `deals` endpoint upon navigation to the page
+
+- The following additional queries were used to make the call:
+    1. id (which represents the deal id of the game)
+
+##### Example
+```shell
+https://www.cheapshark.com/api/1.0/deals?id=ZKZdAvI3UHaMPYAg0bURT7wf%2F%2FH6dh2Ita%2Fht3qdoJM%3D
+```
+
 ### Bookmarks page
 #### Without any saved games
 <img width="695" src="https://user-images.githubusercontent.com/65485512/138038154-8e6bc6a0-19e6-4e02-98cf-ed4443939be5.png" alt="bookmarks-no-saved-games-page" />
@@ -96,6 +147,9 @@ npm run build:start
 - If the user has bookmarked any games, those games should appear on this page
 
 - The user should also be able to remove any bookmarked games from the page by clicking on the "Remove from bookmarks" button
+
+- Another feature of this page include the following:
+    1. The bookmarked games are saved in the local storage as well, this means that even if the user closes the application and re-opens the application, the bookmarked games will still persist
 
 ### Styleguidist page
 <img width="695" src="https://user-images.githubusercontent.com/65485512/138038405-75fa4a4c-1932-4d8f-9d2f-4d22138de514.png" alt="styleguidist-page" />
