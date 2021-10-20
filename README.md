@@ -64,11 +64,11 @@ npm run build:start
 - In order to retrieve the games, a `fetch` API call was made to the CheapShark API `deals` endpoint
 
 - The following additional queries were used to make the call:
-    1. pageNumber
-    1. pageSize
-    1. storeID
-    1. onSale 
-    1. sortBy
+    1. `pageNumber` 
+    1. `pageSize` 
+    1. `storeID` represents which game store the games would be retrieved from
+    1. `onSale` represents whether only games that are on sale would be retrieved 
+    1. `sortBy` 
 
 ##### Example:
 ```shell
@@ -88,7 +88,7 @@ https://www.cheapshark.com/api/1.0/deals?pageNumber=1&pageSize=12&storeID=1&onSa
 - The first call was used to retrieve the relevant games based on the search term inputted by the user
 
 - The following additional queries were used to make the first call:
-    1. title (which represents the search term made by the user)
+    1. `title` represents the search term made by the user
 
 ##### Example
 ```shell
@@ -99,7 +99,7 @@ https://www.cheapshark.com/api/1.0/games?title=batman
 - Given the game IDs that were retrieved from the first API call, the second API call involved using each game ID as a query to retrieve the game details for each respective game 
 
 - The following additional queries were used to make the second call:
-    1. id (which represents the game ID that was retrieved from the previous call)
+    1. `id` represents the game ID that was retrieved from the previous call
 
 ##### Example 
 ```shell
@@ -128,7 +128,7 @@ https://www.cheapshark.com/api/1.0/games?id=612
 - In order to retrieve the game details, a `fetch` API call had to be made to the CheapShark API `deals` endpoint upon navigation to the page
 
 - The following additional queries were used to make the call:
-    1. id (which represents the deal id of the game)
+    1. `id` represents the deal id of the game
 
 ##### Example
 ```shell
