@@ -10,7 +10,7 @@ To obtain the sale prices and ratings, the app mainly makes API calls to the Che
 
 ## Setup
 ### Downloading the repository
-Clone the repository fromGithub. On your terminal or Git Bash, type the following:
+Clone the repository from Github. On your terminal or Git Bash, type the following:
 ```shell
 git clone https://github.com/jeyren95/px-frontend-capstone.git
 ```
