@@ -94,7 +94,7 @@ https://www.cheapshark.com/api/1.0/deals?pageNumber=1&pageSize=12&storeID=1&onSa
 ```shell
 https://www.cheapshark.com/api/1.0/games?title=batman
 ```
-- The above call would only retrieve details such as the game IDs, and not the desired game details that the application would like to display, which is why a second API call had to be made to retrieve those relevant details
+- The above call would only retrieve details such as the game IDs, and not the desired game details that the Search page would like to display, which is why a second API call had to be made to retrieve those relevant details
 
 - Given the game IDs that were retrieved from the first API call, the second API call involved using each game ID as a query to retrieve the game details for each respective game 
 
