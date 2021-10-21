@@ -15,6 +15,14 @@ Clone the repository from Github. On your terminal or Git Bash, type the followi
 git clone https://github.com/jeyren95/px-frontend-capstone.git
 ```
 
+### Install necessary packages
+From the root folder i.e. `px-frontend-capstone`:
+
+To install the packages, you can run the following:
+```shell
+npm install
+```
+
 ### Run Application 
 From the root folder i.e. `px-frontend-capstone`:
 
