@@ -66,3 +66,5 @@ export const GameDetails = () => {
         </div>
     )
 }
+
+export default GameDetails

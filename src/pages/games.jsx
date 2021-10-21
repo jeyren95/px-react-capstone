@@ -36,7 +36,10 @@ export const GamesPage = () => {
                     label="Sort Games"
                     name="sort-games"
                     options={["Deal Rating", "Title", "Price", "Metacritic", "Savings", "Reviews", "Release"]}
-                    onChange={(e) => setSelectedSortingOption(e.target.value)}
+                    onChange={(e) => {
+                        setPage(0)
+                        setSelectedSortingOption(e.target.value)
+                    }}
                     className="w-1/2"
                     />
                 </div>

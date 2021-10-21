@@ -55,6 +55,8 @@ export const BookmarksContextProvider = ({ children }) => {
 export const useBookmarks = () => {
     const bookmarksState = React.useContext(BookmarksContext)
 
+    // add useEffect to refresh data or create another hook
+
     if (!bookmarksState) {
         throw new Error("App is not wrapped in bookmarks context provider")
     } else {
